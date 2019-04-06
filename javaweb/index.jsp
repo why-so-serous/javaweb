@@ -26,6 +26,7 @@
 				}
 				if(ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)){
 					ip = request.getHeader("X-Real-IP");
+				}
 				if(ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)){
 					ip = request.getRemoteAddr();
 				}
