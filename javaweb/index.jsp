@@ -12,7 +12,8 @@
 				密码： <input type="password" name="passwd">  <p>
 				<input type="submit" value=" 登 录 ">
 			</form>
-			<p> <a href="http://47.106.32.3:8080/demo/register.jsp" target="_blank">register</a></p>
+			<p> <a href="http://47.106.32.3:8080/demo/register.jsp" target="_blank">注册</a></p>
+			<p>温馨提示:测试效果的账号名为xyq,密码为123456<p>
 
 		</div>
 		</center>
