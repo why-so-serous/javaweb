@@ -16,18 +16,22 @@
 			<p> <a href="http://47.106.32.3:8080/demo/register.jsp" target="_blank">注册</a></p>
 			<p>温馨提示:测试效果的账号名为xyq,密码为123456<p>
 
+			<%
+				String ip = request.getHeader("x-forwarded-for");
+				if(ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)){
+					ip = request.getHeader("Proxy-Client-IP);
+				}
+				if(ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)){
+					ip = request.getHeader("WL-Proxy-Client-IP");
+				}
+				if(ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)){
+				ip = request.getRemoteAddr();
+				}
+				out.print(ip);
+			%>
+
 		</div>
 		</center>
-		<%	
-			String realIP = request.getHeader("x-forwarded-for");
-			if (realIP != null && realIP.length() != 0) {
-				out.print("your IP is:" + realIP);
-			}
-			else{
-				String ip = request.getRemoteAddr();
-				out.print("your IP is:" + ip);
-			}
-		%>
 		<br>
 
 	</body>
