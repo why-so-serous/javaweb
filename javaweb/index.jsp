@@ -1,4 +1,5 @@
-<%@ page contentType ="text/html; charset=utf-8" session="true" %>
+<%@ page contentType ="text/html; charset=utf-8" session="true" language="java"%>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -17,5 +18,17 @@
 
 		</div>
 		</center>
+		<%	
+			String realIP = request.getHeader("x-forwarded-for");
+			if (realIP != null && realIP.length() != 0) {
+				out.print("your IP is:" + realIP);
+			}
+			else{
+				String ip = request.getRemoteAddr();
+				out.print("your IP is:" + ip);
+			}
+		%>
+		<br>
+
 	</body>
 </html>
