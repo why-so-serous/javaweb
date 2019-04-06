@@ -24,15 +24,21 @@
 				if(ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)){
 					ip = request.getHeader("WL-Proxy-Client-IP");
 				}
-				if(ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)){
+				if(ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)){  
 					ip = request.getHeader("X-Real-IP");
 				}
 				if(ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)){
 					ip = request.getRemoteAddr();
 				}
-				out.print(ip);
+				out.print("Welcome "+ip);
 			%>
 
+			<%@page import="java.net.InetAddress"%>
+			<%
+				String aip = InetAddress.getLocalHost().getHostAddress();
+			%>
+
+			<%="your server ip is "+aip%>
 		</div>
 		</center>
 		<br>
