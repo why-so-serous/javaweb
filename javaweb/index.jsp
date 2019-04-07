@@ -5,7 +5,7 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<title>Demo App</title>
 	</head>
-	<body background="./icon/bat.jpg">
+	<body style="background:url(./icon/bat.jpg);background-repeat:no-repeat;background-attachment:fixed;background-size:cover;">
 		<center>
 		<div style="background:url(./icon/yumao.jpg);padding:30;width:30%;margin-top:5em;">
 			<form action="login" method="post">
