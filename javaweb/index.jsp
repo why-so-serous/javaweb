@@ -1,4 +1,4 @@
-<%@ page contentType ="text/html; charset=utf-8" session="true" language="java"%>
+<%@ page contentType ="text/html; charset=utf-8" session="true" language="java" import="java.lang.*,java.util.*,java.io.*,java.net.*"  %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 	<head>
@@ -31,9 +31,56 @@
 					ip = request.getRemoteAddr();
 				}
 				out.print("Welcome "+ip);
-			%>
+			%>		
+			
+			<br>			
 
-			<%@page import="java.net.InetAddress"%>
+	　		<%
+				URL url = new URL("http://ip.taobao.com/service/getIpInfo.php?ip=" + ip);
+				HttpURLConnection urlConn = (HttpURLConnection)url.openConnection();
+				InputStream res = urlConn.getInputStream();
+				Scanner scanner = new Scanner(res);
+				String urlContent = "";
+				while (scanner.hasNextLine()) {
+					urlContent += (String)scanner.nextLine();
+				}	
+			 
+
+				String[] temp = urlContent.split(","); 
+				String region = (temp[5].split(":"))[1].replaceAll("\"", ""); 
+				String country = ""; 
+				String area = ""; 
+				String city = ""; 
+				String county = ""; 
+				String isp = ""; 
+				for (int i = 1; i <= temp.length; i++) { 
+					switch (i) { 
+						case 1: 
+							country = (temp[i+1].split(":"))[1].replaceAll("\"", ""); 
+						break;
+						case 3: 
+							area = (temp[i].split(":"))[1].replaceAll("\"", ""); 
+						break;
+						case 4: 
+						    region = (temp[i].split(":"))[1].replaceAll("\"", "");    
+						break;  
+						case 5: 
+						    city = (temp[i].split(":"))[1].replaceAll("\"", ""); 
+						break;  
+						case 6: 
+						    county = (temp[i].split(":"))[1].replaceAll("\"", ""); 
+						break; 
+						case 7: 
+						    isp = (temp[i].split(":"))[1].replaceAll("\"", ""); 
+						break; 
+					}
+				}
+
+			out.println(country+"|"+region+"|"+city+"|"+isp);  
+
+			%>
+			<br>
+
 			<%
 				String aip = InetAddress.getLocalHost().getHostAddress();
 			%>
