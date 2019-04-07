@@ -7,7 +7,7 @@
 	</head>
 	<body>
 		<center>
-		<div style="background-color:#ddd;padding:30;width:30%;margin-top:5em">
+		<div style="background:url(./icon/yumao.jpg);padding:30;width:30%;margin-top:5em;">
 			<form action="login" method="post">
 				用户： <input type="text" name="user"> <p>
 				密码： <input type="password" name="passwd">  <p>
