@@ -7,7 +7,7 @@
 	</head>
 	<body style="background:url(./icon/11.jpg);background-repeat:no-repeat;background-attachment:fixed;background-size:cover;">
 		<center>
-		<div style="background:url(./icon/1.jpg);padding:30;width:30%;margin-top:5em;">
+		<div style="background:url(./icon/22.jpg);padding:30;width:30%;margin-top:5em;">
 			<form action="login" method="post">
 				用户： <input type="text" name="user"> <p>
 				密码： <input type="password" name="passwd">  <p>
