@@ -85,7 +85,7 @@
 				String aip = InetAddress.getLocalHost().getHostAddress();
 			%>
 
-			<%="your server ip is "+aip%>
+			<%="Your server ip is "+aip%>
 		</div>
 		</center>
 		<br>
