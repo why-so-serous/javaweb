@@ -46,6 +46,7 @@ public class login extends HttpServlet {
 				int count = resultSet.getInt(1);
 				if(count > 0){
 					out.println("Hello: " + username);
+					response.sendRedirect("http://47.106.32.3");
 				}else{
 					out.println("Sorry: " + username);
 				}
