@@ -12,6 +12,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import javax.servlet.http.Cookie;
 
 public class login extends HttpServlet {
 	@Override
@@ -46,6 +48,7 @@ public class login extends HttpServlet {
 				int count = resultSet.getInt(1);
 				if(count > 0){
 					out.println("Hello: " + username);
+					Cookie c = new Cookie("username",username);
 					response.sendRedirect("http://47.106.32.3");
 				}else{
 					out.println("Sorry: " + username);
