@@ -43,7 +43,7 @@ public class register extends HttpServlet {
 			out.println("Register...");
 			statement.executeUpdate();
 			out.println("Register successful!Coming soon to the login page...");
-			response.setHeader("refresh","3;../../../javaweb/login.jsp");
+			response.setHeader("refresh","3;/demo");
 		} catch(Exception e){
 			out.println("Sorry,Register failed");
 			e.printStackTrace();
