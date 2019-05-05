@@ -26,7 +26,7 @@
      		    <input type="text" name="user" class="form-control" placeholder="用户名" required autofocus>
 			    <label for="inputPassword" class="sr-only">密码</label>
 				<input type="password" name="passwd" class="form-control" placeholder="密码" required>
-				<button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
+				<button class="btn btn-lg btn-primary btn-block" type="submit">注册</button>
 
 			</form>
 			</div> <!-- /container --> 
