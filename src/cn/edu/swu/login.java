@@ -47,6 +47,7 @@ public class login extends HttpServlet {
 			if(resultSet.next()){
 				int count = resultSet.getInt(1);
 				if(count > 0){
+					request.getSession().setAttribute("USERSESSIONKEY", username);
 					out.println("Hello: " + username);
 					Cookie c = new Cookie("username",username);
 					response.sendRedirect("http://47.106.32.3:8080/admin");

@@ -28,4 +28,25 @@
 		<servlet-name>register</servlet-name>
 		<url-pattern>/register</url-pattern>
 	</servlet-mapping>
+	<context-param>
+    	<param-name>userSessionKey</param-name>
+   	 	<param-value>USERSESSIONKEY</param-value>
+  	</context-param>
+  	<context-param>
+    	<param-name>rediretPage</param-name>
+    	<param-value>index.jsp</param-value>
+  	</context-param>
+  	<context-param>
+    	<param-name>uncheckedUrls</param-name>
+    	<param-value>/index.jsp,/login/index.jsp,/login/register.jsp,/404.jsp,/403.jsp</param-value>
+  	</context-param>
+  	<context-param>
+    	<param-name>userUrls</param-name>
+   		<param-value>/user.jsp,/updateuser.jsp,/newuser.jsp,/admin.html</param-value>
+  	</context-param>
+    <context-param>
+    	<param-name>refuse</param-name>
+    	<param-value>/403.jsp</param-value>
+  	</context-param>
+
 </web-app>
