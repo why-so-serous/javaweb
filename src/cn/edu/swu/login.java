@@ -49,7 +49,7 @@ public class login extends HttpServlet {
 				if(count > 0){
 					out.println("Hello: " + username);
 					Cookie c = new Cookie("username",username);
-					response.sendRedirect("http://47.106.32.3");
+					response.sendRedirect("http://47.106.32.3:8080/admin");
 				}else{
 					out.println("Sorry: " + username);
 				}
